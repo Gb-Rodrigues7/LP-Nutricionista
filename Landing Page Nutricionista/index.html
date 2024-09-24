@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutricionista</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">Nutricionista</h1>
+                <nav class="navbar">
+                    <div class="navbar-menu">
+                        <a class="navbar-item" href="#produtos">Produtos</a>
+                        <a class="navbar-item" href="#receitas">Receitas</a>
+                        <a class="navbar-item" href="#exames">Exames</a>
+                        <a class="navbar-item" href="#imc">Calculadora IMC</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Carrossel -->
+    <section class="carousel mt-4">
+        <div class="relative">
+            <div class="carousel-container" id="carouselContainer">
+                <img src="./banner1.jpg" alt="Imagem 1">
+                <img src="./banner2.jpg" alt="Imagem 2">
+                <img src="./banner3.jpg" alt="Imagem 3">
+            </div>
+        </div>
+        <button onclick="previous()" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white text-blue-500 p-2">❮</button>
+        <button onclick="next()" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white text-blue-500 p-2">❯</button>
+    </section>
+
+    <!-- Coleções -->
+    <!-- <section id="produtos" class="section">
+        <div class="container">
+            <h2 class="title text-center">Nossas Coleções</h2>
+            <div class="grid grid-cols-4 gap-4 mt-4 text-center">
+                <a class="p-4 border rounded-md" href="#Produtos">Produtos</a>            
+                <a class="p-4 border" href="#Receitas">Receitas</a>
+                <a class="p-4 border" href="Exames">Exames</a>
+                <a class="p-4 border" href="#IMC">IMC</a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Vídeo -->
+    <section class="section">
+        <div class="container">
+            <h2 class="title">Conheça Nosso Trabalho</h2>
+            <iframe width="100%" height="315" src="https://www.youtube.com/watch?v=rY_q8xlsFvk&ab_channel=DanieleCapelatoNutricionista" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Formulário de Contato -->
+    <section class="section">
+        <div class="container">
+            <h2 class="title">Contato</h2>
+            <div class="columns">
+                <div class="column">
+                    <form>
+                        <div class="field">
+                            <label class="label">Nome</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Seu nome">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control">
+                                <input class="input" type="email" placeholder="Seu email">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Mensagem</label>
+                            <div class="control">
+                                <textarea class="textarea" placeholder="Sua mensagem"></textarea>
+                            </div>
+                        </div>
+                        <div class="control">
+                            <button class="button is-primary">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="column">
+                    <img src="./foto.png" alt="Imagem de contato">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Especialidades -->
+    <section class="section">
+        <div class="container">
+            <h2 class="title">Nossas Especialidades</h2>
+            <div class="grid grid-cols-4 gap-4 mt-4">
+                <div class="p-4 border">Nutrição Clínica</div>
+                <div class="p-4 border">Nutrição Esportiva</div>
+                <div class="p-4 border">Pediatria</div>
+                <div class="p-4 border">Nutrição Funcional</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculadora IMC -->
+    <section id="imc" class="section">
+        <div class="container">
+            <h2 class="title">Calculadora IMC</h2>
+            <div>
+                <label for="peso">Peso (kg): </label>
+                <input type="number" id="peso" class="border p-2" placeholder="Seu peso">
+                <label for="altura">Altura (m): </label>
+                <input type="number" id="altura" class="border p-2" placeholder="Sua altura">
+                <button onclick="calcularIMC()" class="bg-blue-500 text-white p-2">Calcular IMC</button>
+                <p id="resultadoIMC" class="mt-2"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <div class="columns">
+                <div class="column">
+                    <h3>Contato</h3>
+                    <p>Email: contato@nutricionista.com</p>
+                </div>
+                <div class="column">
+                    <h3>Redes Sociais</h3>
+                    <p><i class="fab fa-facebook"></i> Facebook</p>
+                    <p><i class="fab fa-instagram"></i> Instagram</p>
+                </div>
+                <div class="column">
+                    <h3>Horários</h3>
+                    <p>Seg - Sex: 8h - 18h</p>
+                    <p>Sáb: 9h - 14h</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="./scripts.js"></script>
+</body>
+</html>
